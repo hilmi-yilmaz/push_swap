@@ -1,5 +1,6 @@
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
+CFLAGSDBG = $(CFLAGS) -g -fsanitize=address
 VPATH = src
 
 # Source files
@@ -26,7 +27,6 @@ DBGEXE = debug_push_swap
 all: $(RELEASE_OBJ_DIR) $(NAME)
 
 # Debug build
-debug: CFLAGS += -g -fsanitize=address
 debug: $(DEBUG_OBJ_DIR) $(DBGEXE)
 
 run: all
@@ -49,10 +49,10 @@ $(RELEASE_OBJ_FILES): $(RELEASE_OBJ_DIR)/%.o : %.c $(HEADER_FILES)
 
 # Build debug
 $(DBGEXE): $(DEBUG_OBJ_FILES)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CFLAGSDBG) $^ -o $@
 
 $(DEBUG_OBJ_FILES): $(DEBUG_OBJ_DIR)/%.o : %.c $(HEADER_FILES)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGSDBG) -c $< -o $@
 
 clean:
 	rm -rf $(RELEASE_OBJ_DIR) $(DEBUG_OBJ_DIR)
