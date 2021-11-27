@@ -33,13 +33,16 @@ RELEASE_OBJ_FILES = $(SRC_FILES:%.c=$(RELEASE_OBJ_DIR)/%.o)
 DEBUG_OBJ_DIR = debug_obj
 DEBUG_OBJ_FILES = $(SRC_FILES:%.c=$(DEBUG_OBJ_DIR)/%.o)
 
+# Libft
+LIBFT = libft.a
+
 # Program names
 NAME = push_swap
 DBGEXE = debug_push_swap
 TESTEXE = test_push_swap
 
 # Default build
-all: $(RELEASE_OBJ_DIR) $(NAME)
+all: $(RELEASE_OBJ_DIR) $(LIBFT) $(NAME)
 
 # Debug build
 debug: $(DEBUG_OBJ_DIR) $(DBGEXE)
@@ -47,7 +50,7 @@ debug: $(DEBUG_OBJ_DIR) $(DBGEXE)
 run: all
 	@ ./$(NAME)
 
-test: $(TESTEXE)
+test: $(LIBFT) $(TESTEXE)
 
 # Create release object directory
 $(RELEASE_OBJ_DIR):
@@ -73,16 +76,21 @@ $(DEBUG_OBJ_FILES): $(DEBUG_OBJ_DIR)/%.o : %.c $(HEADER_FILES)
 
 # Unit tests
 $(TESTEXE):
-	@$(CC) $(CFLAGS) $(UNITY_SRC) $(UNITY_INCL) $(TEST_FILES) $(SRC_FILES_TO_TEST) -o $@
+	@$(CC) $(CFLAGS) $(UNITY_SRC) $(UNITY_INCL) $(TEST_FILES) $(SRC_FILES_TO_TEST) libft/$(LIBFT) -o $@
 	@ - ./$@
 	@rm -f $@
 
+# Libft
+$(LIBFT):
+	make -C libft
+
 clean:
 	rm -rf $(RELEASE_OBJ_DIR) $(DEBUG_OBJ_DIR)
+	make fclean -C libft/
 
 fclean: clean
 	rm -f $(NAME) $(DBGEXE)
 
 re: fclean all
 
-.PHONY = all debug clean fclean re
+.PHONY = all debug test clean fclean re

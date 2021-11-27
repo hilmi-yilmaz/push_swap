@@ -1,3 +1,6 @@
 [submodule "unity"]
 	path = unity
 	url = git@github.com:ThrowTheSwitch/Unity.git
+[submodule "libft"]
+	path = libft
+	url = git@github.com:hilmi-yilmaz/libft.git
