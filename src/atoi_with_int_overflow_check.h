@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   atoi_with_int_overflow_check.h                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 23:36:00 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/27 17:35:18 by hyilmaz       ########   odam.nl         */
+/*   Created: 2021/11/27 14:02:38 by hyilmaz       #+#    #+#                 */
+/*   Updated: 2021/11/27 16:16:43 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#ifndef ATOI_WITH_INT_OVERFLOW_CHECK_H
+# define ATOI_WITH_INT_OVERFLOW_CHECK_H
 
-int	main(void)
-{
-	printf("Welcome at push_swap\n");
-	return (SUCCES);
-}
+/* Macros */
+
+/* System headers */
+# include <stddef.h>
+# include <string.h>
+
+/* User defined header */
+# include "data.h"
+
+/* Data structures */
+
+/* Function prototypes */
+int	atoi_with_int_overflow_check(const char *num_str);
+
+#endif
