@@ -2,3 +2,4 @@ obj/
 push_swap
 debug_push_swap
 a.out
+.vscode/

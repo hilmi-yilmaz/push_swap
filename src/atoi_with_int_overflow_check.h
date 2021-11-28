@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/27 14:02:38 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/27 19:54:44 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/11/28 18:51:07 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@
 # include "../libft/libft.h"
 
 /* Data structures */
+typedef struct s_atoi
+{
+	int	result;
+	int	minus;
+	int	*err;
+}				t_atoi;
 
 /* Function prototypes */
 int	atoi_with_int_overflow_check(const char *num_str, int *err);

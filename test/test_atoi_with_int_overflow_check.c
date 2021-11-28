@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/27 14:10:58 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/27 21:47:29 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/11/28 16:30:48 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,13 @@ TEST(TestReturnAtoiWithIntOverflowCheck, OutOfLongBounds)
 
 	atoi_with_int_overflow_check("-9999999999999999999999999999999999999999999999999999999999999999999999999999", &err);
 	TEST_ASSERT_EQUAL_INT_MESSAGE(1, err, "err: Input is \"-9999999999999999999999999999999999999999999999999999999999999999999999999999\"");
+}
+
+TEST(TestReturnAtoiWithIntOverflowCheck, LotsOfZeros)
+{
+	TEST_ASSERT_EQUAL_INT_MESSAGE(1, atoi_with_int_overflow_check("0000000000000000000000000000000000000001", &err), "Input is \"0000000000000000000000000000000000000001\"");
+	TEST_ASSERT_EQUAL_INT_MESSAGE(0, err, "err: Input is \"0000000000000000000000000000000000000001\"");
+
 }
 
 TEST(TestReturnAtoiWithIntOverflowCheck, NULL_PTR)
