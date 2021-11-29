@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.h                                             :+:    :+:            */
+/*   input_validation.h                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/25 23:41:20 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/30 00:25:36 by hyilmaz       ########   odam.nl         */
+/*   Created: 2021/11/29 13:37:14 by hyilmaz       #+#    #+#                 */
+/*   Updated: 2021/11/30 00:36:28 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#ifndef INPUT_VALIDATION_H
+# define INPUT_VALIDATION_H
 
 /* Macros */
 
 /* System headers */
+# include <unistd.h>
 # include <stdio.h>
 
 /* User defined header */
 # include "data.h"
-# include "input_validation.h"
+# include "../libft/libft.h"
+# include "atoi_with_int_overflow_check.h"
+# include "sorting_algorithms.h"
 
 /* Data structures */
 
 /* Function prototypes */
-
+int	check_for_wrong_characters(char **argv);
+int	check_all_are_integers(char **argv);
+int	check_for_duplicates(int *sorted_array, int num_elements);
+int	validate_input(int argc, char **argv);
 
 #endif

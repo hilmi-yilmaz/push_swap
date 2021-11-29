@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/27 14:08:17 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/28 16:31:08 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/11/29 23:34:58 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ static void	run_all_tests(void)
 	RUN_TEST_CASE(TestReturnAtoiWithIntOverflowCheck, OutOfLongBounds);
 	RUN_TEST_CASE(TestReturnAtoiWithIntOverflowCheck, LotsOfZeros);
 	RUN_TEST_CASE(TestReturnAtoiWithIntOverflowCheck, NULL_PTR);
+
+	RUN_TEST_CASE(TestInputValidation, Duplicates);
+	RUN_TEST_CASE(TestInputValidation, WrongCharacters);
+	RUN_TEST_CASE(TestInputValidation, OutOfIntegerBounds);
+	RUN_TEST_CASE(TestInputValidation, OneOrMoreInputsAreEmpty);
+
+	RUN_TEST_CASE(TestSortingAlgorithms, BubbleSort);
+
 }
 
 int	main(int argc, const char *argv[])
