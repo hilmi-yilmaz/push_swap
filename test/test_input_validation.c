@@ -6,12 +6,11 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 13:42:17 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/30 00:19:59 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/11/30 16:52:34 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unity_fixture.h"
-#include "unity_memory.h"
 #include "unity.h"
 
 #include "../src/data.h"
@@ -20,6 +19,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 static char	**argv = NULL;
 static int	err;

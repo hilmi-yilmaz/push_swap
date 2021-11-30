@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 23:36:00 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/30 00:39:53 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/11/30 21:57:40 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 int	main(int argc, char **argv)
 {
-	int	*stack_a;
-	int	*stack_b;
+	t_stack	a;
+	t_stack b;
+	t_stack	*idx;
 
 	if (validate_input(argc, argv + 1))
+		return (FAILURE);
+	idx = init_stacks(&a, &b, argv + 1, argc - 1);
+	if (idx == NULL)
 		return (FAILURE);
 	return (SUCCES);
 }
