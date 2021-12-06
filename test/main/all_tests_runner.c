@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 21:49:59 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 13:10:09 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/06 17:55:36 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,17 @@ TEST_GROUP_RUNNER(TestOperations)
 {
 	RUN_TEST_CASE(TestOperations, TestRotateStack);
 	RUN_TEST_CASE(TestOperations, TestPushToOtherStack);
+	RUN_TEST_CASE(TestOperations, TestSwap);
 	RUN_TEST_CASE(TestOperations, TestRotateAndPush);
+	RUN_TEST_CASE(TestOperations, TestReverseRotate);
 }
 
 TEST_GROUP_RUNNER(TestRadixsort)
 {
 	RUN_TEST_CASE(TestRadixsort, RadixSort);
+}
+
+TEST_GROUP_RUNNER(TestThreeAndFiveLengthArrays)
+{
+	RUN_TEST_CASE(TestThreeAndFiveLengthArrays, ThreeLength);
 }

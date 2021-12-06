@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 10:52:18 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 15:41:16 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/06 18:32:02 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,32 @@ void	push_a_to_b(t_stack *a, t_stack *b)
 	}
 	a->num_elements -= 1;
 	//ft_putstr_fd("push\n", 1);
+}
+
+void	swap(t_stack *a)
+{
+	int	tmp;
+
+	if (a->num_elements < 2)
+		return ;
+	tmp = a->stack[0];
+	a->stack[0] = a->stack[1];
+	a->stack[1] = tmp;
+}
+
+void	reverse_rotate(t_stack *a)
+{
+	int	i;
+	int	tmp;
+
+	if (a->num_elements < 2)
+		return ;
+	i = a->num_elements - 1;
+	tmp = a->stack[a->num_elements - 1];
+	while (i > 0)
+	{
+		a->stack[i] = a->stack[i - 1];
+		i--;
+	}
+	a->stack[0] = tmp;
 }

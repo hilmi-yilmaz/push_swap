@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   operations.h                                       :+:    :+:            */
+/*   utils.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/12/06 10:37:21 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 17:49:35 by hyilmaz       ########   odam.nl         */
+/*   Created: 2021/12/06 17:38:36 by hyilmaz       #+#    #+#                 */
+/*   Updated: 2021/12/06 17:38:48 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPERATIONS_H
-# define OPERATIONS_H
+#include "utils.h"
 
-/* Macros */
+int	check_if_sorted(t_stack *a)
+{
+	int	i;
 
-/* System headers */
-# include <stdio.h>
-
-/* User defined header */
-# include "data.h"
-# include "../libft/libft.h"
-
-/* Data structures */
-
-/* Function prototypes */
-void    rotate_stack(t_stack *a);
-void    push_a_to_b(t_stack *a, t_stack *b);
-void	swap(t_stack *a);
-void	reverse_rotate(t_stack *a);
-
-#endif
+	i = 0;
+	while (i < a->num_elements - 1)
+	{
+		if (a->stack[i] > a->stack[i + 1])
+			return (FAILURE);
+		i++;
+	}
+	return (SUCCES);
+}

@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 10:34:50 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 12:25:01 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/06 18:33:18 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,4 +160,66 @@ TEST(TestOperations, TestRotateAndPush)
 
     free(a->stack);
     free(b->stack);
+}
+
+TEST(TestOperations, TestSwap)
+{
+    t_stack *a;
+    int     len;
+
+    len = 5;
+    a = create_stack(len, len, 1, 2, 3, 4, 5);
+	swap(a);
+	int expected[] = {2, 1, 3, 4, 5};
+	TEST_ASSERT_EQUAL_INT_ARRAY_MESSAGE(expected, a->stack, len, "Input is \"1 2 3 4 5\"");
+	TEST_ASSERT_EQUAL_INT_MESSAGE(len, a->num_elements, "Input is \"1 2 3 4 5\"");
+	free(a->stack);
+
+    len = 1;
+    a = create_stack(len, len, 1);
+	swap(a);
+	int expected_1[] = {1};
+	TEST_ASSERT_EQUAL_INT_ARRAY_MESSAGE(expected_1, a->stack, len, "Input is \"1\"");
+	TEST_ASSERT_EQUAL_INT_MESSAGE(len, a->num_elements, "Input is \"1\"");
+	free(a->stack);
+}
+
+TEST(TestOperations, TestReverseRotate)
+{
+    t_stack *a;
+    int     len;
+
+    len = 3;
+    a = create_stack(len, len, 3, 2, 5);
+	reverse_rotate(a);
+	int expected[] = {5, 3, 2};
+	TEST_ASSERT_EQUAL_INT_ARRAY_MESSAGE(expected, a->stack, len, "Input is \"3 2 5\"");
+	TEST_ASSERT_EQUAL_INT_MESSAGE(len, a->num_elements, "Input is \"3 2 5\"");
+	free(a->stack);
+
+    len = 5;
+    a = create_stack(len, len, 1, 2, 3, 4, 5);
+	reverse_rotate(a);
+	int expected_1[] = {5, 1, 2, 3, 4};
+	TEST_ASSERT_EQUAL_INT_ARRAY_MESSAGE(expected_1, a->stack, len, "Input is \"1 2 3 4 5\"");
+	TEST_ASSERT_EQUAL_INT_MESSAGE(len, a->num_elements, "Input is \"1 2 3 4 5\"");
+	free(a->stack);
+
+    len = 5;
+    a = create_stack(len, len, 1, 2, 3, 4, 5);
+	reverse_rotate(a);
+	reverse_rotate(a);
+	int expected_2[] = {4, 5, 1, 2, 3};
+	TEST_ASSERT_EQUAL_INT_ARRAY_MESSAGE(expected_2, a->stack, len, "Input is \"1 2 3 4 5\"");
+	TEST_ASSERT_EQUAL_INT_MESSAGE(len, a->num_elements, "Input is \"1 2 3 4 5\"");
+	free(a->stack);
+
+    len = 1;
+    a = create_stack(len, len, 1);
+	reverse_rotate(a);
+	reverse_rotate(a);
+	int expected_3[] = {1};
+	TEST_ASSERT_EQUAL_INT_ARRAY_MESSAGE(expected_3, a->stack, len, "Input is \"1\"");
+	TEST_ASSERT_EQUAL_INT_MESSAGE(len, a->num_elements, "Input is \"1\"");
+	free(a->stack);
 }

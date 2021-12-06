@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 12:23:00 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 15:28:13 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/06 17:54:08 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 /* User defined header */
 # include "data.h"
 # include "operations.h"
+# include "utils.h"
 
 /* Data structures */
 
