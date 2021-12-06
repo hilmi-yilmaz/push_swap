@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 21:49:59 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/30 21:53:15 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/06 11:58:00 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,11 @@ TEST_GROUP_RUNNER(InitStacks)
 {
 	RUN_TEST_CASE(InitStacks, IndexArray);
 	RUN_TEST_CASE(InitStacks, InitStackCompleteModuleCheck);
+}
+
+TEST_GROUP_RUNNER(TestOperations)
+{
+	RUN_TEST_CASE(TestOperations, TestRotateStack);
+	RUN_TEST_CASE(TestOperations, TestPushToOtherStack);
+	RUN_TEST_CASE(TestOperations, TestRotateAndPush);
 }
