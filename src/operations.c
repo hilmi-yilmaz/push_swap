@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 10:52:18 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 11:57:19 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/06 15:41:16 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	rotate_stack(t_stack *a)
 		i++;
 	}
 	a->stack[i] = tmp;
+	//ft_putstr_fd("rr\n", 1);
 }
 
 /*
@@ -63,4 +64,5 @@ void	push_a_to_b(t_stack *a, t_stack *b)
 		i++;
 	}
 	a->num_elements -= 1;
+	//ft_putstr_fd("push\n", 1);
 }

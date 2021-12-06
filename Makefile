@@ -41,7 +41,9 @@ TEST_FILES = 	unity/src/unity.c \
 				test/test_init_stacks.c \
 				src/init_stacks.c \
 				test/test_operations.c \
-				src/operations.c
+				src/operations.c \
+				test/test_radix_sort.c \
+				src/radix_sort.c
 
 #SRC_FILES_TO_TEST = src/atoi_with_int_overflow_check.c
 
