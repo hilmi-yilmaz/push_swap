@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 23:41:20 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/30 16:57:53 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 11:04:33 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include "data.h"
 # include "input_validation.h"
 # include "init_stacks.h"
+# include "sort_3_and_5.h"
+# include "radix_sort.h"
 
 /* Data structures */
 

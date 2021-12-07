@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 10:52:18 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 18:32:02 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 11:09:35 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	rotate_stack(t_stack *a)
 		i++;
 	}
 	a->stack[i] = tmp;
-	//ft_putstr_fd("rr\n", 1);
+	ft_putstr_fd("ra\n", 1);
 }
 
 /*
@@ -64,7 +64,7 @@ void	push_a_to_b(t_stack *a, t_stack *b)
 		i++;
 	}
 	a->num_elements -= 1;
-	//ft_putstr_fd("push\n", 1);
+	ft_putstr_fd("pb\n", 1);
 }
 
 void	swap(t_stack *a)
@@ -76,6 +76,7 @@ void	swap(t_stack *a)
 	tmp = a->stack[0];
 	a->stack[0] = a->stack[1];
 	a->stack[1] = tmp;
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	reverse_rotate(t_stack *a)
@@ -93,4 +94,5 @@ void	reverse_rotate(t_stack *a)
 		i--;
 	}
 	a->stack[0] = tmp;
+	ft_putstr_fd("rr\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 15:53:32 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 17:39:19 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 10:45:38 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@
 
 /* Function prototypes */
 void	sort_three(t_stack *a);
+void	sort_five(t_stack *a, t_stack *b);
 
 #endif

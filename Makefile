@@ -9,7 +9,12 @@ SRC_FILES = main.c \
 			input_validation.c \
 			atoi_with_int_overflow_check.c \
 			init_stacks.c \
-			sorting_algorithms.c
+			sorting_algorithms.c \
+			operations.c \
+			sort_3_and_5.c \
+			radix_sort.c \
+			utils.c
+
 
 # Header files
 HEADER_FILES = 	main.h \
@@ -17,7 +22,11 @@ HEADER_FILES = 	main.h \
 				input_validation.h \
 				atoi_with_int_overflow_check.h \
 				init_stacks.h \
-				sorting_algorithms.h
+				sorting_algorithms.h \
+				operations.c \
+				sort_3_and_5.h \
+				radix_sort.h \
+				utils.h
 
 # # Unity files
 UNITY_CONFIG_DEFINES = 	-D UNITY_OUTPUT_COLOR \

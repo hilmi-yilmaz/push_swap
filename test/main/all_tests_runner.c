@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 21:49:59 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 17:55:36 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 10:45:10 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ TEST_GROUP_RUNNER(TestRadixsort)
 TEST_GROUP_RUNNER(TestThreeAndFiveLengthArrays)
 {
 	RUN_TEST_CASE(TestThreeAndFiveLengthArrays, ThreeLength);
+	RUN_TEST_CASE(TestThreeAndFiveLengthArrays, FiveLength);
 }
