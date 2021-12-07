@@ -6,19 +6,14 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/27 14:02:38 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/28 18:51:07 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 13:40:59 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ATOI_WITH_INT_OVERFLOW_CHECK_H
 # define ATOI_WITH_INT_OVERFLOW_CHECK_H
 
-/* Macros */
-
 /* System headers */
-# include <stddef.h>
-# include <string.h>
-# include <stdio.h>
 # include <limits.h>
 
 /* User defined header */

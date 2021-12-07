@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 12:33:54 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 17:38:30 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 11:20:52 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	radix_sort(t_stack *a, t_stack *b)
 			if ((a->stack[0] & (0b01 << bit)) == 0)
 				push_a_to_b(a, b);
 			else
-				rotate_stack(a);
+				rotate(a);
 			number_in_stack++;
 		}
 		while (b->num_elements != 0)

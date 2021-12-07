@@ -6,14 +6,12 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 13:37:14 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/30 16:22:48 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 13:39:00 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INPUT_VALIDATION_H
 # define INPUT_VALIDATION_H
-
-/* Macros */
 
 /* System headers */
 # include <unistd.h>
@@ -23,9 +21,6 @@
 # include "data.h"
 # include "../libft/libft.h"
 # include "atoi_with_int_overflow_check.h"
-# include "sorting_algorithms.h"
-
-/* Data structures */
 
 /* Function prototypes */
 int	check_for_wrong_characters(char **argv);

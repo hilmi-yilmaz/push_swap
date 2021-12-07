@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 12:43:09 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/30 21:30:24 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 11:24:37 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,7 @@ t_stack	*init_stacks(t_stack *a, t_stack *b, char **argv, int num_elements)
 	idx = create_idx_stack(a);
 	arange_idx_stack(a, idx, sorted_array);
 	free(sorted_array);
+	idx->id = 'a';
+	b->id = 'b';
 	return (idx);
 }

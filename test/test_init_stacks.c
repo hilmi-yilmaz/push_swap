@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 15:03:19 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/30 21:35:22 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 13:41:48 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 /* System headers */
 #include <stdarg.h>
+#include <string.h>
 
 /* Source files to test */
 #include "../src/init_stacks.h"

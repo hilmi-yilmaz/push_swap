@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 10:34:50 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/06 18:33:18 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 11:21:41 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ TEST(TestOperations, TestRotateStack)
 
     len = 5;
     a = create_stack(len, len, 1, 2, 3, 4, 5);
-    rotate_stack(a);
+    rotate(a);
     int expected[] = {2, 3, 4, 5, 1};
     TEST_ASSERT_EQUAL_INT_ARRAY_MESSAGE(expected, a->stack, len, "Input is \"1 2 3 4 5\"");
     TEST_ASSERT_EQUAL_INT_MESSAGE(len, a->num_elements, "Input len is 5");
@@ -65,7 +65,7 @@ TEST(TestOperations, TestRotateStack)
 
     len = 1;
     a = create_stack(len, len, 1);
-    rotate_stack(a);
+    rotate(a);
     int expected1[] = {1};
     TEST_ASSERT_EQUAL_INT_ARRAY_MESSAGE(expected1, a->stack, len, "Input is \"1\"");
     TEST_ASSERT_EQUAL_INT_MESSAGE(len, a->num_elements, "Input len is 1");
@@ -73,7 +73,7 @@ TEST(TestOperations, TestRotateStack)
 
     len = 10;
     a = create_stack(len, len, 10, 8, 11, 99, 14, -1, 37, 101, 3, 23);
-    rotate_stack(a);
+    rotate(a);
     int expected2[] = {8, 11, 99, 14, -1, 37, 101, 3, 23, 10};
     TEST_ASSERT_EQUAL_INT_ARRAY_MESSAGE(expected2, a->stack, len, "Input is \"10 8 11 99 14 -1 37 101 3 23\"");
     TEST_ASSERT_EQUAL_INT_MESSAGE(len, a->num_elements, "Input len is 10");
@@ -130,11 +130,11 @@ TEST(TestOperations, TestRotateAndPush)
 	len = 5;
     a = create_stack(len, len, 1, 2, 3, 4, 5);
     b = create_stack(len, 0); // length of stack b is the same as a, but is has 0 elements inside.
-	rotate_stack(a); // a = 2 3 4 5 1
-	rotate_stack(a); // a = 3 4 5 1 2 
+	rotate(a); // a = 2 3 4 5 1
+	rotate(a); // a = 3 4 5 1 2 
 	push_a_to_b(a, b); // a = 4 5 1 2	####	b = 3
 	push_a_to_b(a, b); // a = 5 1 2		####	b = 4 3
-	rotate_stack(b); // a = 5 1 2		####	b = 3 4
+	rotate(b); // a = 5 1 2		####	b = 3 4
 	int	expected_a_1[] = {5, 1, 2};
 	int	expected_b_1[] = {3, 4};
 	TEST_ASSERT_EQUAL_INT_ARRAY(expected_a_1, a->stack, 3);
