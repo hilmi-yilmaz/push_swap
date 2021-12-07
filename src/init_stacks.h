@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 12:43:25 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 14:42:50 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 17:37:17 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "atoi_with_int_overflow_check.h"
 # include "sorting_algorithms.h"
 # include "input_validation.h"
+# include "utils.h"
 
 /* Function prototypes */
 void	arange_a_stack_from_idx(t_stack *a, t_stack *idx, int *sorted_array);

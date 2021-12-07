@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 10:52:18 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 11:29:47 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 17:39:44 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	rotate(t_stack *a)
 	int	tmp;
 
 	if (a->num_elements < 2)
-	    return ;
+		return ;
 	i = 0;
 	tmp = a->stack[0];
 	while (i < a->num_elements - 1)

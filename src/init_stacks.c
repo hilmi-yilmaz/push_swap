@@ -6,33 +6,11 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 12:43:09 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 17:30:17 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 18:07:57 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "init_stacks.h"
-#include <stdio.h>
-
-static int	*copy_array(int *array, int num_elements, int *err)
-{
-	int	i;
-	int	*copy_array;
-	
-	i = 0;
-	copy_array = ft_calloc(num_elements, sizeof(*copy_array));
-	if (copy_array == NULL)
-	{
-		*err = FAILURE;
-		return (NULL);
-	}
-	while (i < num_elements)
-	{
-		copy_array[i] = array[i];
-		i++;
-	}
-	*err = SUCCES;
-	return (copy_array);
-}
 
 static int	create_stack_a_and_b(t_stack *a, t_stack *b, int num_elements)
 {
@@ -98,6 +76,7 @@ void	arange_a_stack_from_idx(t_stack *a, t_stack *idx, int *sorted_array)
 {
 	int	i;
 	int	j;
+
 	i = 0;
 	j = 0;
 	while (i < a->num_elements)
@@ -124,15 +103,14 @@ void	arange_a_stack_from_idx(t_stack *a, t_stack *idx, int *sorted_array)
 
 int	init_stacks(t_stack *a, t_stack *b, char **argv, int num_elements)
 {
-	int		err;
 	int		*sorted_array;
-	t_stack *idx;
-	
+	t_stack	*idx;
+
 	if (create_stack_a_and_b(a, b, num_elements))
 		return (FAILURE);
 	fill_stack_a(a, argv, num_elements);
-	sorted_array = copy_array(a->stack, a->num_elements, &err);
-	if (err == FAILURE)
+	sorted_array = copy_array(a->stack, a->num_elements);
+	if (sorted_array == NULL)
 		return (FAILURE);
 	bubble_sort(sorted_array, a->num_elements);
 	if (check_for_duplicates(sorted_array, a->num_elements))

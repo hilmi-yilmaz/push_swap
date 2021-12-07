@@ -86,7 +86,7 @@ all: $(RELEASE_OBJ_DIR) $(LIBFT) $(NAME)
 debug: $(DEBUG_OBJ_DIR) $(DBGEXE)
 
 run: all
-	./$(NAME) 4 3 2 1
+	./$(NAME) 4 3 2 1 0
 
 test: $(TEST_OBJ_DIR) $(LIBFT) $(TESTEXE)
 

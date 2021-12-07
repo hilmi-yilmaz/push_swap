@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/27 14:02:38 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 13:40:59 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 17:56:39 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 /* User defined header */
 # include "data.h"
 # include "../libft/libft.h"
+# include "utils.h"
 
 /* Data structures */
 typedef struct s_atoi

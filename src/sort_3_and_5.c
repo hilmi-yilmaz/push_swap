@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 15:54:25 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 13:34:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 17:40:15 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ static int	which_idx_gets_faster_on_top(t_stack *a)
 void	sort_three(t_stack *a)
 {
 	int	*arr;
-	
+
 	arr = a->stack;
 	if (arr[0] < arr[1] && arr[1] < arr[2])
 		return ;

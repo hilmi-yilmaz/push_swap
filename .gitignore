@@ -4,3 +4,4 @@ debug_push_swap
 a.out
 .vscode/
 checker_Mac
+test.c

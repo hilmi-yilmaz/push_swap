@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 15:03:19 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 17:30:44 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 18:09:25 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,6 @@ static char	**create_argv(int amount_arguments, ...)
 	}
 	va_end(args);
 	return (argv);
-}
-
-static int	*copy_array(int *array, int num_elements)
-{
-	int	i;
-	int	*copy_array;
-	
-	i = 0;
-	copy_array = ft_calloc(num_elements, sizeof(*copy_array));
-	while (i < num_elements)
-	{
-		copy_array[i] = array[i];
-		i++;
-	}
-	return (copy_array);
 }
 
 static t_stack	*create_stack(int num_elements, ...)

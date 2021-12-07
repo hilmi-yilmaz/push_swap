@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 16:32:14 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/29 19:52:04 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 17:40:57 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	bubble_sort(int *array, int len_array)
 {
-	int i;
+	int	i;
 	int	j;
 	int	len_array_variable;
-	int tmp;
+	int	tmp;
 
 	i = 0;
 	j = 0;

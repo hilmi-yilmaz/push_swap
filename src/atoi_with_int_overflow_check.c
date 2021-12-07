@@ -6,41 +6,11 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/27 14:05:34 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/11/28 18:50:53 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 17:48:38 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "atoi_with_int_overflow_check.h"
-
-/*
-** Skips plus and minus signs.
-** Returns the index of the first digit.
-** If not a -, + or digit, err = 1.
-*/
-
-static int	skip_plus_and_minus_signs(const char *num_str, int *minus, int *err)
-{
-	int	i;
-
-	i = 0;
-	while (num_str[i] != '\0')
-	{
-		if (num_str[i] == '-')
-			*minus += 1;
-		else if (ft_isdigit(num_str[i]) != 0)
-		{
-			*minus = *minus % 2;
-			return (i);
-		}
-		else if (num_str[i] != '+')
-		{
-			*err = 1;
-			return (-1);
-		}
-		i++;
-	}
-	return (-1);
-}
 
 /*
 ** Skips all characters until first digit.
@@ -163,13 +133,3 @@ int	atoi_with_int_overflow_check(const char *num_str, int *err)
 		data.result *= -1;
 	return (data.result);
 }
-
-// int	main(void)
-// {
-// 	int	res;
-// 	int	err = 0;
-
-// 	res = atoi_with_int_overflow_check("1a467", &err);
-// 	printf("%d\n%d\n", res, err);
-// 	return (0);
-// }
