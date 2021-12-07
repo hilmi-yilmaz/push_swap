@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 12:43:25 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 13:39:44 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/07 14:42:50 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # include "input_validation.h"
 
 /* Function prototypes */
-void	arange_idx_stack(t_stack *a, t_stack *idx, int *sorted_array);
+void	arange_a_stack_from_idx(t_stack *a, t_stack *idx, int *sorted_array);
 t_stack	*create_idx_stack(t_stack *a);
-t_stack	*init_stacks(t_stack *a, t_stack *b, char **argv, int num_elements);
+int		init_stacks(t_stack *a, t_stack *b, char **argv, int num_elements);
 
 #endif
