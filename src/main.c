@@ -6,11 +6,16 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/25 23:36:00 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 17:46:54 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 13:30:24 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
+
+/*
+** The push_swap program. Sorts and array of number using a set of limited
+** instructions.
+*/
 
 int	main(int argc, char **argv)
 {

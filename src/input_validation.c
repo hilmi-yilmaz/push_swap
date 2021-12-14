@@ -6,19 +6,20 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 13:37:58 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/14 10:50:22 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 13:29:47 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "input_validation.h"
 
+/*
+** Check amount of input arguments is bigger than 1.
+*/
+
 static int	check_amount_of_arguments(int argc)
 {
 	if (argc < 2)
-	{
-		ft_putstr_fd("Error\n", STDOUT_FILENO);
-		return (FAILURE);
-	}
+		return (print_and_return_failure("Error\n"));
 	return (SUCCES);
 }
 
@@ -36,18 +37,12 @@ int	check_for_wrong_characters(char **argv)
 	while (argv[i] != NULL)
 	{
 		if (argv[i][j] == '\0')
-		{
-			ft_putstr_fd("Error\n", STDOUT_FILENO);
-			return (FAILURE);
-		}
+			return (print_and_return_failure("Error\n"));
 		while (argv[i][j] != '\0')
 		{
 			if (argv[i][j] != '-' && argv[i][j] != '+' && \
 				argv[i][j] != ' ' && ft_isdigit(argv[i][j]) == 0)
-			{
-				ft_putstr_fd("Error\n", STDOUT_FILENO);
-				return (FAILURE);
-			}
+				return (print_and_return_failure("Error\n"));
 			j++;
 		}
 		j = 0;
@@ -55,6 +50,10 @@ int	check_for_wrong_characters(char **argv)
 	}
 	return (SUCCES);
 }
+
+/*
+** Check that all numbers given are in the range of integers (no overflows).
+*/
 
 int	check_all_are_integers(char **argv)
 {
@@ -69,14 +68,15 @@ int	check_all_are_integers(char **argv)
 	{
 		res = atoi_with_int_overflow_check(argv[i], &err);
 		if (err == 1)
-		{
-			ft_putstr_fd("Error\n", STDOUT_FILENO);
-			return (FAILURE);
-		}
+			return (print_and_return_failure("Error\n"));
 		i++;
 	}
 	return (SUCCES);
 }
+
+/*
+** Check for duplicates in the input using the sorted array.
+*/
 
 int	check_for_duplicates(int *sorted_array, int num_elements)
 {
@@ -88,14 +88,20 @@ int	check_for_duplicates(int *sorted_array, int num_elements)
 	while (i < num_elements - 1)
 	{
 		if (sorted_array[i] == sorted_array[i + 1])
-		{
-			ft_putstr_fd("Error\n", STDOUT_FILENO);
-			return (FAILURE);
-		}
+			return (print_and_return_failure("Error\n"));
 		i++;
 	}
 	return (SUCCES);
 }
+
+/*
+** Validate the input by checking:
+** 1: amount of arguments given.
+** 2: wrong characters.
+** 3: numbers are in integer range.
+** The check for duplicates is done in init_stacks.c,
+** after the data is sorted.
+*/
 
 int	validate_input(int argc, char **argv)
 {

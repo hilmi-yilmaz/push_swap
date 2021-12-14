@@ -16,6 +16,11 @@ jobs:
     - name: Welcome message
       run: echo Welcome to push-swap!
     
+    - name: build
+      run: make all
+
+    - name: run acceptance test
+      run: ./test/main/acceptance_test.sh
+
     - name: run unit-tests
       run: make test_run 
-

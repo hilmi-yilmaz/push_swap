@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/27 14:05:34 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/14 11:20:42 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 12:57:34 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 ** Skips all characters until first digit.
 */
 
-static int	skip_until_first_digit(const char *num_str, t_atoi *data, int *i, int *err)
+static int	skip_until_first_digit(const char *num_str, t_atoi *data, \
+									int *i, int *err)
 {
 	int	ret;
 

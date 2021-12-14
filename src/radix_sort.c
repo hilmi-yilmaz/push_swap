@@ -6,24 +6,18 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 12:33:54 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 11:20:52 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 13:35:48 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "radix_sort.h"
 
-// static void	print_stack(t_stack *a)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < a->num_elements)
-// 	{
-// 		printf("%d ", a->stack[i]);
-// 		i++;
-// 	}
-// 	printf("\n");
-// }
+/*
+** Sort data using two stack a and b.
+** Loop over the bits and put 0 bits in stack b.
+** Then move all back to top of a.
+** Continue with next bit.
+*/
 
 void	radix_sort(t_stack *a, t_stack *b)
 {

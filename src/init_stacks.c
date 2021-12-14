@@ -6,11 +6,16 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/30 12:43:09 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/14 11:13:11 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 13:27:08 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "init_stacks.h"
+
+/*
+** Allocate memory for both stacks a and b.
+** Assign id's.
+*/
 
 static int	create_stack_a_and_b(t_stack *a, t_stack *b, int num_elements)
 {
@@ -18,21 +23,21 @@ static int	create_stack_a_and_b(t_stack *a, t_stack *b, int num_elements)
 	ft_bzero(b, sizeof(*b));
 	a->stack = ft_calloc(num_elements, sizeof(*a->stack));
 	if (a->stack == NULL)
-	{
-		ft_putstr_fd("Error\n", STDOUT_FILENO);
-		return (FAILURE);
-	}
+		return (print_and_return_failure("Error\n"));
 	b->stack = ft_calloc(num_elements, sizeof(*b->stack));
 	if (b->stack == NULL)
 	{
 		free(a->stack);
-		ft_putstr_fd("Error\n", STDOUT_FILENO);
-		return (FAILURE);
+		return (print_and_return_failure("Error\n"));
 	}
 	a->id = 'a';
 	b->id = 'b';
 	return (SUCCES);
 }
+
+/*
+** Fill stack a with values read from input.
+*/
 
 static void	fill_stack_a(t_stack *a, char **argv, int num_elements)
 {
@@ -47,6 +52,10 @@ static void	fill_stack_a(t_stack *a, char **argv, int num_elements)
 		i++;
 	}
 }
+
+/*
+** Create an index stack which contains [0, 1, 2, ...] till length of a->stack.
+*/
 
 t_stack	*create_idx_stack(t_stack *a)
 {
@@ -71,6 +80,12 @@ t_stack	*create_idx_stack(t_stack *a)
 	idx->num_elements = a->num_elements;
 	return (idx);
 }
+
+/*
+** Arange the indeces (non-negative values) so that it represents the same
+** sorting als the input.
+** This way I can sort an array which contains only 0 and positive values.
+*/
 
 void	arange_a_stack_from_idx(t_stack *a, t_stack *idx, int *sorted_array)
 {
@@ -98,7 +113,7 @@ void	arange_a_stack_from_idx(t_stack *a, t_stack *idx, int *sorted_array)
 
 /*
 ** Will init stacks a and b.
-** Returns a pointer to a new stack with indeces.
+** It fills a with non-negative values using indeces.
 */
 
 int	init_stacks(t_stack *a, t_stack *b, char **argv, int num_elements)
@@ -111,19 +126,13 @@ int	init_stacks(t_stack *a, t_stack *b, char **argv, int num_elements)
 	fill_stack_a(a, argv, num_elements);
 	sorted_array = copy_array(a->stack, a->num_elements);
 	if (sorted_array == NULL)
-		return (FAILURE);
+		return (print_and_return_failure("Error\n"));
 	bubble_sort(sorted_array, a->num_elements);
 	if (check_for_duplicates(sorted_array, a->num_elements))
-	{
-		free(sorted_array);
-		return (FAILURE);
-	}
+		return (free_and_return_failure(a->stack, b->stack, sorted_array));
 	idx = create_idx_stack(a);
 	if (idx == NULL)
-	{
-		free(sorted_array);
-		return (FAILURE);
-	}
+		return (free_and_return_failure(a->stack, b->stack, sorted_array));
 	arange_a_stack_from_idx(a, idx, sorted_array);
 	free(sorted_array);
 	return (SUCCES);

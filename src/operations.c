@@ -6,11 +6,15 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 10:52:18 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 17:39:44 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 13:34:13 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
+
+/*
+** Print the instruction on the screen.
+*/
 
 static void	print_instruction(char *instruction, char stack)
 {
@@ -74,6 +78,11 @@ void	push_a_to_b(t_stack *a, t_stack *b)
 	print_instruction("p", b->id);
 }
 
+/*
+** Swap top 2 elements at the top of stack a.
+** If 0 or 1 elements in stack, do nothing.
+*/
+
 void	swap(t_stack *a)
 {
 	int	tmp;
@@ -85,6 +94,11 @@ void	swap(t_stack *a)
 	a->stack[1] = tmp;
 	print_instruction("s", a->id);
 }
+
+/*
+** Last element becomes top element in the stack.
+** Shift remaining elements.
+*/
 
 void	reverse_rotate(t_stack *a)
 {

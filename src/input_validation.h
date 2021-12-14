@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 13:37:14 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 13:39:00 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 12:46:35 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 /* System headers */
 # include <unistd.h>
-# include <stdio.h>
 
 /* User defined header */
 # include "data.h"

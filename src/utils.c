@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 17:38:36 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 18:08:18 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 13:14:07 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ int	skip_plus_and_minus_signs(const char *num_str, int *minus, int *err)
 	return (-1);
 }
 
+/*
+** Return a copy of array.
+*/
+
 int	*copy_array(int *array, int num_elements)
 {
 	int	i;
@@ -59,6 +63,10 @@ int	*copy_array(int *array, int num_elements)
 	return (cpy_array);
 }
 
+/*
+** Check if the data in stack "a" is sorted. 
+*/
+
 int	check_if_sorted(t_stack *a)
 {
 	int	i;
@@ -71,4 +79,26 @@ int	check_if_sorted(t_stack *a)
 		i++;
 	}
 	return (SUCCES);
+}
+
+/*
+** Print error message and return FAILURE.
+*/
+
+int	print_and_return_failure(char *str)
+{
+	ft_putstr_fd(str, STDOUT_FILENO);
+	return (FAILURE);
+}
+
+/*
+** Free data in the arguments and return FAILURE.
+*/
+
+int	free_and_return_failure(int *arr_1, int *arr_2, int *arr_3)
+{
+	free(arr_1);
+	free(arr_2);
+	free(arr_3);
+	return (FAILURE);
 }

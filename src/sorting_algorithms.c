@@ -6,11 +6,16 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 16:32:14 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 17:40:57 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 13:31:51 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sorting_algorithms.h"
+
+/*
+** Sort algorithms by comparing and swapping values next to each other.
+** The bigger number flow like bubble to the top of the array.
+*/
 
 void	bubble_sort(int *array, int len_array)
 {
