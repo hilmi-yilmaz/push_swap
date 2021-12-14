@@ -6,22 +6,11 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 13:37:58 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/14 18:14:31 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 18:23:03 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "input_validation.h"
-
-/*
-** Check amount of input arguments is bigger than 1.
-*/
-
-static int	check_amount_of_arguments(int argc)
-{
-	if (argc < 2)
-		return (FAILURE);
-	return (SUCCES);
-}
 
 /*
 ** Check whether all characters given are a space, digit, plus or minus sign.
@@ -103,10 +92,9 @@ int	check_for_duplicates(int *sorted_array, int num_elements)
 ** after the data is sorted.
 */
 
-int	validate_input(int argc, char **argv)
+int	validate_input(char **argv)
 {
-	if (check_amount_of_arguments(argc) || \
-		check_for_wrong_characters(argv) || \
+	if (check_for_wrong_characters(argv) || \
 		check_all_are_integers(argv))
 		return (FAILURE);
 	return (SUCCES);

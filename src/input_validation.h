@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 13:37:14 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/14 12:46:35 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 18:23:12 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@
 int	check_for_wrong_characters(char **argv);
 int	check_all_are_integers(char **argv);
 int	check_for_duplicates(int *sorted_array, int num_elements);
-int	validate_input(int argc, char **argv);
+int	validate_input(char **argv);
 
 #endif
