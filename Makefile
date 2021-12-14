@@ -57,8 +57,6 @@ TEST_FILES = 	unity/src/unity.c \
 				src/sort_3_and_5.c \
 				src/utils.c
 
-#SRC_FILES_TO_TEST = src/atoi_with_int_overflow_check.c
-
 # Release object files
 RELEASE_OBJ_DIR = release_obj
 RELEASE_OBJ_FILES = $(SRC_FILES:%.c=$(RELEASE_OBJ_DIR)/%.o)
@@ -83,7 +81,7 @@ TESTEXE = test_push_swap
 all: $(RELEASE_OBJ_DIR) $(LIBFT) $(NAME)
 
 # Debug build
-debug: $(DEBUG_OBJ_DIR) $(DBGEXE)
+debug: $(DEBUG_OBJ_DIR) $(LIBFT) $(DBGEXE)
 
 run: all
 	./$(NAME) 4 3 2 1 0
@@ -118,7 +116,7 @@ $(RELEASE_OBJ_FILES): $(RELEASE_OBJ_DIR)/%.o : %.c $(HEADER_FILES)
 
 # Build debug
 $(DBGEXE): $(DEBUG_OBJ_FILES)
-	$(CC) $(CFLAGSDBG) $^ -o $@
+	$(CC) $(CFLAGSDBG) $^ libft/$(LIBFT) -o $@
 
 $(DEBUG_OBJ_FILES): $(DEBUG_OBJ_DIR)/%.o : %.c $(HEADER_FILES)
 	$(CC) $(CFLAGSDBG) -c $< -o $@
