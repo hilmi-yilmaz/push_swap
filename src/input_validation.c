@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 13:37:58 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/14 13:29:47 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 18:14:31 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 static int	check_amount_of_arguments(int argc)
 {
 	if (argc < 2)
-		return (print_and_return_failure("Error\n"));
+		return (FAILURE);
 	return (SUCCES);
 }
 

@@ -39,7 +39,7 @@ if [[ $(./$program_name 1 2 1 3000000000000000000000000000000) != "Error" ]]; th
 	error=$(($error + 1))
 fi
 
-if [[ $(./$program_name) != "Error" ]]; then											# no input
+if [[ $(./$program_name) != "" ]]; then													# no input
 	error=$(($error + 1))
 fi
 
