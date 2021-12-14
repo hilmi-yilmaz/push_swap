@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/27 14:05:34 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 17:48:38 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 11:11:53 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ static int	skip_until_first_digit(const char *num_str, t_atoi *data, int *i)
 /*
 ** Inits data.
 ** Skips all characters until first digit.
+** If null-terminator found after setting i, means no digit, return FAILURE.
 */
+
 static int	init_atoi_process(const char *num_str, t_atoi *data, \
 								int *err, int *i)
 {
@@ -46,6 +48,11 @@ static int	init_atoi_process(const char *num_str, t_atoi *data, \
 		return (FAILURE);
 	}
 	skip_until_first_digit(num_str, data, i);
+	if (num_str[*i] == '\0')
+	{
+		*err = 1;
+		return (FAILURE);
+	}
 	return (SUCCES);
 }
 

@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 13:37:58 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/07 17:38:24 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/12/14 10:50:22 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ int	check_for_wrong_characters(char **argv)
 	while (argv[i] != NULL)
 	{
 		if (argv[i][j] == '\0')
+		{
+			ft_putstr_fd("Error\n", STDOUT_FILENO);
 			return (FAILURE);
+		}
 		while (argv[i][j] != '\0')
 		{
 			if (argv[i][j] != '-' && argv[i][j] != '+' && \

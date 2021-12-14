@@ -1,5 +1,5 @@
 CC = clang
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 CFLAGSDBG = $(CFLAGS) -g -fsanitize=address
 VPATH = src
 
