@@ -34,4 +34,4 @@ jobs:
       run: make test_run
 
     - name: check memory leaks
-    - run: valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./debug_push_swap 5 4 3 2 1 0 
+      run: valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./debug_push_swap 5 4 3 2 1 0 
