@@ -17,7 +17,7 @@ jobs:
       run: echo Welcome to push-swap!
 
     - name: install valgrind
-    - run: |
+      run: |
         sudo apt-get update
         sudo apt-get install valgrind
     
@@ -25,7 +25,7 @@ jobs:
       run: make all
 
     - name: build debug
-    - run: make debug
+      run: make debug
 
     - name: run acceptance test
       run: ./test/main/acceptance_test.sh
