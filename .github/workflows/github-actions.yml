@@ -15,12 +15,23 @@ jobs:
 
     - name: Welcome message
       run: echo Welcome to push-swap!
+
+    - name: install valgrind
+    - run: |
+        sudo apt-get update
+        sudo apt-get install valgrind
     
-    - name: build
+    - name: build release
       run: make all
+
+    - name: build debug
+    - run: make debug
 
     - name: run acceptance test
       run: ./test/main/acceptance_test.sh
 
     - name: run unit-tests
-      run: make test_run 
+      run: make test_run
+
+    - name: check memory leaks
+    - run: valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./debug_push_swap 5 4 3 2 1 0 

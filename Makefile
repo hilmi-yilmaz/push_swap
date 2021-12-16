@@ -1,6 +1,6 @@
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
-CFLAGSDBG = $(CFLAGS) -g -fsanitize=address
+CFLAGSDBG = $(CFLAGS) -g
 VPATH = src
 
 # Source files
