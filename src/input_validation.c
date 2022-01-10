@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/29 13:37:58 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/12/14 18:23:03 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2022/01/10 14:00:58 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,13 @@ int	check_for_wrong_characters(char **argv)
 int	check_all_are_integers(char **argv)
 {
 	int	i;
-	int	res;
 	int	err;
 
 	i = 0;
-	res = 0;
 	err = 0;
 	while (argv[i] != NULL)
 	{
-		res = atoi_with_int_overflow_check(argv[i], &err);
+		atoi_with_int_overflow_check(argv[i], &err);
 		if (err == 1)
 			return (print_and_return_failure("Error\n"));
 		i++;
